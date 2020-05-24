@@ -36,6 +36,13 @@ Finally Time
 # aria2c -m 10 -s 10 -x 10 -o petalinux-v2019.2-final-installer.run <petalinux link>
 ```
 
+## Must Do it
+```
+$ python3 -m http.server
+
+You have to do it to make local:8000 to package server
+```
+
 ## Building docker image
 ```
 input $(USR) results of [ who -m | awk `{print $1}' ]
