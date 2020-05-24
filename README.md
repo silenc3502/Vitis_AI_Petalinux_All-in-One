@@ -41,13 +41,14 @@ Finally Time
 $ python3 -m http.server
 
 You have to do it to make local:8000 to package server
+Start upon command with your preparation sets existance directory
 ```
 
 ## Building docker image
 ```
 input $(USR) results of [ who -m | awk `{print $1}' ]
 
-$ docker build --build-arg b_uid=`id -u $(USR)` --build-arg b_gid=`id -g $(USR)` --build-arg PETALINUX_INSTALLER=petalinux-v2019.2-final-installer.run --build-arg VITIS_TAR_HOST=192.168.219.169:8000 --build-arg VITIS_TAR_FILE=Xilinx_Vitis_2019.2_1106_2127 --build-arg VITIS_VERSION=2019.2 -t vitis_2019_2 .
+$ docker build --build-arg b_uid=`id -u $(USR)` --build-arg b_gid=`id -g $(USR)` --build-arg PETALINUX_INSTALLER=petalinux-v2019.2-final-installer.run --build-arg VITIS_TAR_HOST=<your IP Address>:8000 --build-arg VITIS_TAR_FILE=Xilinx_Vitis_2019.2_1106_2127 --build-arg VITIS_VERSION=2019.2 -t vitis_2019_2 .
 ```
 
 ## Run docker container
@@ -65,7 +66,7 @@ $ docker run -it --device=/dev/ttyUSB0:/dev/ttyUSB0 -v <your directory>:/home/vi
 $ docker run -ti --rm -e DISPLAY=$DISPLAY --net="host" -v /tmp/.X11-unix:/tmp/.X11-unix -v $HOME/.Xauthority:/home/vivado/.Xauthority -v <your directory>:/home/vivado/workshop vitis_2019_2
 ```
 
-## how to know what commands are currently running on docker
+## How to Know What Commands are Currently Running on Docker
 ```
 $ docker ps --no-trunc
 ```
