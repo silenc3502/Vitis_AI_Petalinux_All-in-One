@@ -9,6 +9,10 @@ So I use Ubuntu 20.04 and Docker for development FPGA.
 
 Use everything with Docker!  
 
+I've got idea from below link.  
+
+https://github.com/shleemars/Petalinux-Zybo-Z7-10  
+
 ## Preparation
 ```
 Docker Tools
